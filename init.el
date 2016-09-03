@@ -1,6 +1,9 @@
 ;;; Hello package
 (require 'package)
 
+;;; https://www.emacswiki.org/emacs/ElectricPair
+(electric-pair-mode 1)
+
 ;;; https://melpa.org/#/getting-started
 (add-to-list 'package-archives
      '("melpa" . "https://melpa.org/packages/"))
