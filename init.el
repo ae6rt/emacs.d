@@ -27,28 +27,8 @@
 ;;; show matching parens
 (show-paren-mode 1)
 
-;;; smooth scrolling
+;;; http://www.emacswiki.org/emacs/SmoothScrolling
 (setq scroll-step 1)
-
-;;; disable tabs for indentation
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 3)
-;;; (setq indent-line-function 'insert-tab)
-;;; (setq tab-width 3)
-
-;;; ----------------------------
-
-;;; yaml
-;;; https://raw.githubusercontent.com/yoshiki/yaml-mode/master/yaml-mode.el
-(add-to-list 'load-path "~/.emacs.d/yaml-support")
-(require 'yaml-mode)
-
-;;; Install flycheck with MELPA
-(add-hook 'after-init-hook #'global-flycheck-mode)
-
-;;; Manually install go-mode
-(add-to-list 'load-path "~/.emacs.d/go-support")
-(require 'go-mode-autoloads)
 
 ;;; https://github.com/nschum/highlight-symbol.el
 (add-to-list 'load-path "~/.emacs.d/highlight-support")
@@ -56,6 +36,25 @@
 
 ;;; https://www.emacswiki.org/emacs/highlight-chars.el
 (require 'highlight-chars)
+
+;;; disable tabs for indentation
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 3)
+
+;;; https://raw.githubusercontent.com/yoshiki/yaml-mode/master/yaml-mode.el
+(add-to-list 'load-path "~/.emacs.d/yaml-support")
+(require 'yaml-mode)
+
+;;; ---------------------
+;;; Go related
+;;; ---------------------
+
+;;; Install flycheck with MELPA
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;;; Manually install go-mode
+(add-to-list 'load-path "~/.emacs.d/go-support")
+(require 'go-mode-autoloads)
 
 ;;; Manually install go-eldoc
 ; https://github.com/syohex/emacs-go-eldoc#setup
@@ -79,6 +78,3 @@
 (add-hook 'go-mode-hook (lambda ()
 			  (set (make-local-variable 'company-backends) '(company-go))
 			  (company-mode)))
-
-;;; http://www.emacswiki.org/emacs/SmoothScrolling
-(setq scroll-step 1)
