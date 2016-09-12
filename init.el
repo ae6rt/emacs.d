@@ -1,9 +1,6 @@
 ;;; Hello package
 (require 'package)
 
-;;; https://www.emacswiki.org/emacs/ElectricPair
-(electric-pair-mode 1)
-
 ;;; https://melpa.org/#/getting-started
 (add-to-list 'package-archives
      '("melpa" . "https://melpa.org/packages/"))
@@ -11,6 +8,10 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
+
+;;; https://www.emacswiki.org/emacs/ElectricPair
+(electric-pair-mode 1)
+(defalias 'epm 'electric-pair-mode)
 
 ;;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
 (setq backup-directory-alist `(("." . "~/.saves")))
@@ -44,6 +45,11 @@
 ;;; https://raw.githubusercontent.com/yoshiki/yaml-mode/master/yaml-mode.el
 (add-to-list 'load-path "~/.emacs.d/yaml-support")
 (require 'yaml-mode)
+
+;;; Git
+;;; --------------
+;;;
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;;; ---------------------
 ;;; Go related
