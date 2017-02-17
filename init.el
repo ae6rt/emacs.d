@@ -10,8 +10,8 @@
 (package-initialize)
 
 ;;; https://www.emacswiki.org/emacs/ElectricPair
-(electric-pair-mode 1)
-(defalias 'epm 'electric-pair-mode)
+;; (electric-pair-mode 1)
+;; (defalias 'epm 'electric-pair-mode)
 
 ;;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
 (setq backup-directory-alist `(("." . "~/.saves")))
