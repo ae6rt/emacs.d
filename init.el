@@ -9,6 +9,9 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
+;; turn off syntax highlighting
+(global-font-lock-mode 0)
+
 ;;; https://www.emacswiki.org/emacs/ElectricPair
 ;; (electric-pair-mode 1)
 ;; (defalias 'epm 'electric-pair-mode)
