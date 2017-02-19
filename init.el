@@ -10,7 +10,7 @@
 (package-initialize)
 
 ;; turn off syntax highlighting
-(global-font-lock-mode 0)
+;;(global-font-lock-mode 0)
 
 ;;; https://www.emacswiki.org/emacs/ElectricPair
 ;; (electric-pair-mode 1)
@@ -87,3 +87,19 @@
 (add-hook 'go-mode-hook (lambda ()
 			  (set (make-local-variable 'company-backends) '(company-go))
 			  (company-mode)))
+;; labburn 
+(load-theme 'labburn t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("83faf27892c7119f6016e3609f346d3dae3516dede8fd8a5940373d98f615b4e" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
