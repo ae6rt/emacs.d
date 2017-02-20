@@ -24,6 +24,9 @@
 ;;; show line:column
 (setq column-number-mode t)
 
+;; line numbers
+(global-linum-mode t)
+
 ;; http://www.masteringemacs.org/articles/2011/01/19/script-files-executable-automatically/
 (add-hook 'after-save-hook
            'executable-make-buffer-file-executable-if-script-p)
@@ -87,8 +90,12 @@
 (add-hook 'go-mode-hook (lambda ()
 			  (set (make-local-variable 'company-backends) '(company-go))
 			  (company-mode)))
+
+;; line number margin
+(setq linum-format "%d  ")
+
 ;; labburn 
-(load-theme 'labburn t)
+;;(load-theme 'labburn t)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
